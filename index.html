@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Li Guanlin (Darcy) | Grade 10 Academic Portfolio</title>
+    <title>Li Guanlin (Darcy) | Academic Portfolio</title>
     <style>
         /* Base Reset & Global Styles */
         * {
@@ -171,6 +171,11 @@
             background-color: #4f6280;
         }
 
+        .btn-block {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
         /* About Me Section */
         .about-container {
             display: flex;
@@ -202,6 +207,90 @@
             font-size: 1.1rem;
             color: var(--primary);
             margin-bottom: 0.4rem;
+        }
+
+        /* Form & Editable Area */
+        .form-wrapper {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        /* AP Courses Table */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1rem 0 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+
+        th, td {
+            border: 1px solid var(--light-gray);
+            padding: 0.8rem 1rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--secondary);
+            font-weight: 600;
+        }
+
+        td input {
+            width: 100%;
+            padding: 0.4rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 3px;
+        }
+
+        .grade-section {
+            margin-bottom: 3rem;
+        }
+
+        .grade-section h3 {
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+        }
+
+        .empty-notice {
+            padding: 1.5rem;
+            background: #f5f6f8;
+            text-align: center;
+            color: #666;
+            border-radius: 6px;
+            margin: 1rem 0;
         }
 
         /* Academic Highlights - Card Layout */
@@ -293,39 +382,12 @@
             font-size: 0.9rem;
         }
 
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-
-        .contact-info a {
-            color: var(--primary);
-            text-decoration: none;
-            display: block;
-            margin: 0.6rem 0;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            padding: 0.9rem;
-            border: 1px solid var(--light-gray);
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 1rem;
-            background-color: white;
-        }
-
-        .contact-form textarea {
-            min-height: 120px;
-            resize: none;
+        /* Fixed State Style */
+        .fixed-area input,
+        .fixed-area textarea {
+            background: #f1f1f1;
+            pointer-events: none;
+            border-color: #ccc;
         }
 
         /* Footer */
@@ -380,7 +442,7 @@
     <!-- Navigation Bar -->
     <header>
         <nav>
-            <a href="#" class="logo">Li Guanlin (Darcy) | Grade 10 Academic Portfolio</a>
+            <a href="#" class="logo">Li Guanlin (Darcy) | Academic Portfolio</a>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -388,10 +450,10 @@
             </div>
             <div class="nav-links" id="navLinks">
                 <a href="#about">About Me</a>
-                <a href="#academic">Academic Highlights</a>
-                <a href="#projects">Projects & Extracurriculars</a>
+                <a href="#academic">Academic & AP Grades</a>
+                <a href="#projects">Projects & Competitions</a>
                 <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
+                <a href="#goals">Career & Life Goals</a>
             </div>
         </nav>
     </header>
@@ -399,121 +461,268 @@
     <!-- Hero Section -->
     <section class="hero">
         <h1>Li Guanlin (Darcy)</h1>
-        <p class="subheading">Grade 10 Secondary School Student | University Preparation Portfolio</p>
-        <p class="tagline">A curious lifelong learner passionate about physics, synthetic biology, paleontology and artificial intelligence exploration.</p>
-        <a href="#about" class="btn">Learn More About Me</a>
+        <p class="subheading">Grade 10 Student | Preparing for Grade 11 & University</p>
+        <p class="tagline">A diligent learner passionate about physics, synthetic biology, biophysics and biomedical investment research.</p>
+        <a href="#about" class="btn">View My Portfolio</a>
     </section>
 
-    <!-- About Me Section -->
+    <!-- About Me & Basic Info Section -->
     <section id="about">
-        <h2>About Me</h2>
+        <h2>About Me & Basic Information</h2>
         <div class="about-container">
-            <!-- CSS Circular Profile Placeholder -->
             <div class="profile-placeholder"></div>
             <div class="about-text">
+                <div class="form-wrapper" id="infoForm">
+                    <div class="form-group">
+                        <label>Basic Information</label>
+                        <input type="text" id="basicInfo" value="Name: Li Guanlin (Darcy) | School: NFLSBCA | Current Grade: 10">
+                    </div>
+                    <div class="form-group">
+                        <label>Personal Hobbies</label>
+                        <textarea id="hobbies">Badminton, synthetic biology research, physics exploration, paleontology, artificial intelligence application and interdisciplinary learning.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Overall Learning Attitude & Plan</label>
+                        <textarea id="learningAttitude">I always maintain a diligent and rigorous learning attitude. I have devoted plenty of time and energy to academic study in Grade 10. In Grade 11, I will keep working hard and make every effort to further improve my overall GPA and academic competitiveness.</textarea>
+                    </div>
+
+                    <!-- GPA Input -->
+                    <div class="form-group">
+                        <label>GPA - Grade 10</label>
+                        <input type="text" id="gpa10" value="87.3">
+                    </div>
+                    <div class="form-group">
+                        <label>GPA - Grade 11 (To be filled later)</label>
+                        <input type="text" id="gpa11" placeholder="Enter GPA after results released">
+                    </div>
+
+                    <div class="btn-block">
+                        <button class="btn" id="submitBtn">Submit & Fix All Information</button>
+                    </div>
+                </div>
+
                 <div class="about-block">
                     <h4>Academic Interests</h4>
-                    <p>I am a Grade 10 student at NFLSBCA with diverse academic passions. I deeply enjoy physics for its ultimate simplicity and consistency, especially the powerful combination of macroscopic phenomena and mathematics. I am fascinated by synthetic biology due to its engineering design philosophy, ranging from genetic pathway design to rigorous experiments and market demonstration. Additionally, I have a strong interest in paleontology, artificial intelligence and social development. I frequently utilize AI tools to comprehend complex academic concepts and build a solid knowledge system efficiently.</p>
-                </div>
-                <div class="about-block">
-                    <h4>Short-Term School Goals</h4>
-                    <p>[Add your short-term academic and personal goals for Grade 10 and upcoming school years here]</p>
-                </div>
-                <div class="about-block">
-                    <h4>Long-Term Higher Education Aspirations</h4>
-                    <p>[Add your university major preferences, research directions and long-term academic career aspirations here]</p>
-                </div>
-                <div class="about-block">
-                    <h4>Personal Learning Values</h4>
-                    <p>I uphold rigorous thinking, exploratory spirit and interdisciplinary learning. I believe cross-subject integration can inspire innovative ideas, and I maintain an open mind to explore unknown academic fields while focusing on practical application of theoretical knowledge.</p>
+                    <p>I deeply enjoy physics for its ultimate simplicity and consistency, especially the powerful combination of macroscopic phenomena and mathematics. I am fascinated by synthetic biology due to its engineering design philosophy. I also keep exploring paleontology, artificial intelligence and social development, and use AI tools to build a complete knowledge system efficiently.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Academic Highlights Section -->
+    <!-- Academic & AP Grades Section -->
     <section id="academic" style="background-color: white;">
-        <h2>Academic Highlights</h2>
+        <h2>Academic & AP Courses Grades</h2>
+
+        <!-- Grade 10 Regular Courses & AP Courses -->
+        <div class="grade-section">
+            <h3>Grade 10 Regular School Courses</h3>
+            <div class="table-wrap">
+                <table id="table10Regular">
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Final Score / Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Physical and Health Education 10</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Composition 10</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Literary Studies 10</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Foundations of Math and Pre-Calculus 10</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Pre-calculus 11</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Social Studies 10 (Canada and the World)</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Mandarin 10</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>NFLS Moral Education 10</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Science 10</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>Drama 10</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>NFLS History 10</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>NFLS Geography 10</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="grade-section">
+            <h3>Grade 10 AP Courses & Scores</h3>
+            <div class="table-wrap">
+                <table id="table10AP">
+                    <thead>
+                        <tr>
+                            <th>AP Course Name</th>
+                            <th>Final Score / Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AP Physics 1 Honours</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>AP Computer Science Principles</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>AP Capstone Seminar</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>AP Calculus</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>AP Biology</td>
+                            <td><input type="text" value="" class="score-input"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Grade 11 Section (No known regular courses yet) -->
+        <div class="grade-section">
+            <h3>Grade 11 Regular School Courses</h3>
+            <div class="empty-notice">
+                The list of Grade 11 regular school courses has not been announced yet. Content will be supplemented later.
+            </div>
+        </div>
+
+        <div class="grade-section">
+            <h3>Grade 11 Planned AP Courses & Scores (Pending)</h3>
+            <div class="table-wrap">
+                <table id="table11AP">
+                    <thead>
+                        <tr>
+                            <th>AP Course Name</th>
+                            <th>Final Score / Rating (To be filled)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AP Physics C: Mechanics</td>
+                            <td><input type="text" placeholder="Pending" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>AP Physics C: Electricity & Magnetism</td>
+                            <td><input type="text" placeholder="Pending" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>AP Chemistry</td>
+                            <td><input type="text" placeholder="Pending" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>AP Research</td>
+                            <td><input type="text" placeholder="Pending" class="score-input"></td>
+                        </tr>
+                        <tr>
+                            <td>AP Microeconomics</td>
+                            <td><input type="text" placeholder="Pending" class="score-input"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         <div class="academic-grid">
             <article class="card">
-                <h3>Advanced Placement (AP) Courses</h3>
-                <p>I am currently enrolled in multiple rigorous AP courses including AP Physics 1 Honours, AP Computer Science Principles, AP Capstone Seminar, AP Calculus and AP Biology. These courses challenge my academic ability and lay a solid foundation for university-level learning.</p>
+                <h3>Overall Academic Performance</h3>
+                <p>I maintain stable and solid academic performance across all core subjects. I keep a positive learning state and will continue to strengthen my knowledge foundation to lift overall GPA in Grade 11.</p>
                 <p class="date">Academic Year: 2025 - 2026</p>
             </article>
             <article class="card">
-                <h3>Physics Exploration</h3>
-                <p>Focus on studying the logical unity and mathematical expression of physical laws. I enjoy analyzing macroscopic natural phenomena through physical theories and exploring the inherent laws behind the world.</p>
+                <h3>Physics & Biophysics Learning</h3>
+                <p>Focus on exploring the unity of physical laws and combining physics with biological research. Continuously expand interdisciplinary theoretical knowledge and practical thinking.</p>
                 <p class="date">Ongoing Personal Study</p>
             </article>
             <article class="card">
-                <h3>Synthetic Biology Research</h3>
-                <p>Deep learning of synthetic biology theories and experimental logic. I appreciate its complete engineering process from design, experiment to verification, and constantly expand relevant professional knowledge.</p>
-                <p class="date">Ongoing Personal Study</p>
-            </article>
-            <article class="card">
-                <h3>Paleontology Learning</h3>
-                <p>Self-exploration of paleontological knowledge as a personal hobby. Continuously accumulate relevant disciplinary content and broaden my interdisciplinary academic vision.</p>
-                <p class="date">Long-Term Personal Interest</p>
-            </article>
-            <article class="card">
-                <h3>AI & Social Development Research</h3>
-                <p>Explore the influence and application of artificial intelligence in daily life. Use AI as a learning assistant to understand difficult concepts and construct a complete personal knowledge framework.</p>
-                <p class="date">Ongoing Exploration</p>
-            </article>
-            <article class="card">
-                <h3>Comprehensive Academic Performance</h3>
-                <p>Maintain excellent overall grades across all Grade 10 core subjects including mathematics, literature, social studies, science and language courses, with stable academic performance.</p>
-                <p class="date">Academic Year: 2025 - 2026</p>
+                <h3>Synthetic Biology Exploration</h3>
+                <p>In-depth study of synthetic biology engineering logic, experimental design and project verification, accumulating experience for future related research directions.</p>
+                <p class="date">Long-Term Academic Interest</p>
             </article>
         </div>
     </section>
 
-    <!-- Projects & Extracurriculars Section -->
+    <!-- Projects & Competitions Section -->
     <section id="projects">
-        <h2>Projects & Extracurriculars</h2>
+        <h2>Projects & Academic Competitions</h2>
         <div class="projects-grid">
             <article class="card">
-                <h3>iGEM Competition (International Genetically Engineered Machine)</h3>
-                <p>Participated in the world's top synthetic biology competition initiated by MIT. Worked in a cross-disciplinary team to design, build and test innovative bioengineering systems following the engineering cycle of design-build-test-learn.</p>
-                <p class="skill-gained"><strong>Skills Gained:</strong> Synthetic biology research, team collaboration, experimental design, interdisciplinary thinking, project management. This experience allowed me to view problems from a creator's perspective and deepen my understanding of engineering applications.</p>
-                <p class="date">Timeline: [Add competition start & end date here]</p>
-            </article>
-            <article class="card">
-                <h3>Badminton Club</h3>
-                <p>Regular participant of the school badminton club. Attend club training and daily sports activities to maintain physical fitness and cultivate teamwork and sportsmanship.</p>
-                <p class="skill-gained"><strong>Skills Gained:</strong> Physical endurance, teamwork, stress management, competitive spirit.</p>
-                <p class="date">Timeline: 2025 - Present</p>
+                <h3>iGEM Competition</h3>
+                <p>Participated in the International Genetically Engineered Machine competition. Worked in a team to complete synthetic biology project design, experiment and demonstration.</p>
+                <p class="skill-gained"><strong>Skills Gained:</strong> Synthetic biology research, experimental operation, team collaboration, project design and logical thinking. This experience helped me view research from a creator’s perspective.</p>
+                <p class="date">Timeline: [Fill in competition time]</p>
             </article>
             <article class="card">
                 <h3>Biochemistry Experiment Club</h3>
-                <p>Joined the school biochemistry experiment club to participate in hands-on biochemical experiments, consolidate biology and chemistry knowledge, and accumulate laboratory operation experience.</p>
-                <p class="skill-gained"><strong>Skills Gained:</strong> Laboratory operation, experimental observation, data recording, scientific rigorousness.</p>
+                <p>Regular participation in biochemical laboratory activities, consolidating biology and chemistry knowledge and cultivating rigorous scientific literacy.</p>
+                <p class="skill-gained"><strong>Skills Gained:</strong> Lab operation, data recording, scientific observation and analysis.</p>
                 <p class="date">Timeline: 2025 - Present</p>
             </article>
             <article class="card">
                 <h3>Computer Science Club</h3>
-                <p>Engage in computer science learning and technical communication within the club, combining with AP Computer Science Principles courses to expand programming and computing thinking abilities.</p>
-                <p class="skill-gained"><strong>Skills Gained:</strong> Computational thinking, basic programming, technical communication, problem-solving.</p>
+                <p>Learn computer knowledge and computational thinking, combining with AP Computer Science courses to improve technical ability.</p>
+                <p class="skill-gained"><strong>Skills Gained:</strong> Computational thinking, basic programming, problem solving.</p>
                 <p class="date">Timeline: 2025 - Present</p>
             </article>
             <article class="card">
-                <h3>AI-Assisted Academic Research Project</h3>
-                <p>Personal project using artificial intelligence tools to assist in learning difficult knowledge in physics, biology and other subjects, exploring efficient learning methods and knowledge system construction.</p>
-                <p class="skill-gained"><strong>Skills Gained:</strong> AI tool application, self-directed learning, knowledge integration, information screening.</p>
+                <h3>Badminton Club</h3>
+                <p>Daily sports training and club activities to keep healthy physical condition and cultivate team spirit and perseverance.</p>
+                <p class="skill-gained"><strong>Skills Gained:</strong> Physical endurance, stress adjustment, teamwork.</p>
+                <p class="date">Timeline: 2025 - Present</p>
+            </article>
+            <article class="card">
+                <h3>AI-Assisted Learning Project</h3>
+                <p>Use artificial intelligence tools to assist in learning difficult subjects, sort out knowledge systems and improve learning efficiency.</p>
+                <p class="skill-gained"><strong>Skills Gained:</strong> AI tool application, self-directed learning, knowledge integration.</p>
                 <p class="date">Timeline: Ongoing Personal Project</p>
             </article>
             <article class="card">
-                <h3>[Add Volunteer / Summer Enrichment Activity Name]</h3>
-                <p>[Add detailed description of volunteer work, summer courses or other enrichment activities here]</p>
-                <p class="skill-gained"><strong>Skills Gained:</strong> [Add corresponding skills gained from this activity here]</p>
-                <p class="date">Timeline: [Add activity timeline here]</p>
+                <h3>[Other Competitions / Activities]</h3>
+                <p>[Fill in other academic competitions, volunteer activities or extracurricular projects]</p>
+                <p class="skill-gained"><strong>Skills Gained:</strong> [Fill in related skills]</p>
+                <p class="date">Timeline: [Fill in time]</p>
             </article>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" style="background-color: white;">
-        <h2>Skills</h2>
+        <h2>Personal Skills</h2>
         <div class="skills-container">
             <div class="skill-category">
                 <h3>Academic Skills</h3>
@@ -564,9 +773,9 @@
                 </div>
                 <div class="skill-pills">
                     <span class="pill">Synthetic Biology</span>
+                    <span class="pill">Biophysics</span>
                     <span class="pill">Paleontology Basics</span>
                     <span class="pill">Computer Science</span>
-                    <span class="pill">Pre-Calculus</span>
                 </div>
             </div>
             <div class="skill-category">
@@ -619,31 +828,28 @@
                 <div class="skill-pills">
                     <span class="pill">Communication</span>
                     <span class="pill">Critical Thinking</span>
-                    <span class="pill">Sports & Fitness</span>
                     <span class="pill">Experimental Rigor</span>
+                    <span class="pill">Financial & Investment Basics</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Get In Touch</h3>
-                <p>Feel free to contact me for academic communication or further information review.</p>
-                <a href="mailto:[Your School Email]">School Email: [Your School Email]</a>
-                <a href="[LinkedIn/Student Profile Link]">Student Profile: [LinkedIn / Personal Profile Link]</a>
-                <p>Location: NFLSBCA</p>
+    <!-- Career & Life Goals Section -->
+    <section id="goals">
+        <h2>Career & Life Long-Term Goals</h2>
+        <div class="form-wrapper" id="goalForm">
+            <div class="form-group">
+                <label>Career & Academic Directions</label>
+                <textarea id="careerGoals">My future development directions include becoming a researcher engaged in synthetic biology and biophysics. I also plan to explore related fields such as pharmaceutical enterprises, oncology research and targeted drug investment. I am interested in combining life science research with industrial investment development.</textarea>
             </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <input type="text" placeholder="Subject">
-                <textarea placeholder="Your Message"></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
+            <div class="form-group">
+                <label>University Study & Future Plan</label>
+                <textarea id="uniPlan">After entering university, I will delve deeper into professional knowledge related to physics, biology and interdisciplinary subjects. I will actively participate in laboratory internships, enterprise visits and industry practice to understand the operation mode of biomedical industry, accumulate practical experience, and lay a solid foundation for my long-term career goals.</textarea>
+            </div>
+            <div class="btn-block">
+                <button class="btn" id="goalSubmitBtn">Fix Goal Information</button>
+            </div>
         </div>
     </section>
 
@@ -674,10 +880,40 @@
                         top: targetElement.offsetTop,
                         behavior: 'smooth'
                     });
-                    // Close mobile menu after click
                     navLinks.classList.remove('active');
                 }
             });
+        });
+
+        // Fix Basic Info & GPA & AP Scores
+        const submitBtn = document.getElementById('submitBtn');
+        const infoForm = document.getElementById('infoForm');
+        const scoreInputs = document.querySelectorAll('.score-input');
+
+        submitBtn.addEventListener('click', function(){
+            infoForm.classList.add('fixed-area');
+            const allInputs = infoForm.querySelectorAll('input, textarea');
+            allInputs.forEach(input => {
+                input.disabled = true;
+            });
+            scoreInputs.forEach(input => {
+                input.disabled = true;
+                input.style.background = '#f1f1f1';
+                input.style.borderColor = '#ccc';
+            });
+            alert('All basic information, GPA and AP course scores have been fixed successfully!');
+        });
+
+        // Fix Goals Area
+        const goalSubmitBtn = document.getElementById('goalSubmitBtn');
+        const goalForm = document.getElementById('goalForm');
+        goalSubmitBtn.addEventListener('click', function(){
+            goalForm.classList.add('fixed-area');
+            const goalInputs = goalForm.querySelectorAll('input, textarea');
+            goalInputs.forEach(input => {
+                input.disabled = true;
+            });
+            alert('Career and life goals information has been fixed successfully!');
         });
     </script>
 </body>
